@@ -9,12 +9,14 @@ begin = datetime.date(2017, 1, 1)
 end = datetime.date(2017, 12, 31)
 data = [
     [str(begin + datetime.timedelta(days=i)), random.randint(1000, 25000)]
-    for i in range((end - begin).days + 1)
+    for i in range((end - begin).days -360)
 ]
 
-for i in range((end - begin).days + 1):
-    print(str(begin + datetime.timedelta(days=i)))
-    print(random.randint(1000, 25000))
+# for i in range((end - begin).days + 1):
+#     print(str(begin + datetime.timedelta(days=i)))
+#     print(random.randint(1000, 25000))
+
+for it in data: print(it)
 
 (
     Calendar()
