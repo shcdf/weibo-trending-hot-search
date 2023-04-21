@@ -4,7 +4,7 @@ import os
 import json
 
 # tWord = input('Enter a word:')
-tWord = '通报'
+tWord = '封城'
 
 def wordCount(tWord):
     tNo = 0
@@ -107,12 +107,12 @@ data = [
             pos_top="120",
             pos_left="30",
             pos_right="30",
-            range_="2021",
-            yearlabel_opts=opts.CalendarYearLabelOpts(is_show=True),
+            range_="2022",
+            yearlabel_opts=opts.CalendarYearLabelOpts(is_show=False),
         ),
     )
     .set_global_opts(
-        title_opts=opts.TitleOpts(pos_top="30", pos_left="center", title="2021"),
+        title_opts=opts.TitleOpts(pos_top="30", pos_left="center", title="2022"),
         visualmap_opts=opts.VisualMapOpts(
             max_=1, min_=100, orient="horizontal", is_piecewise=False
         ),
