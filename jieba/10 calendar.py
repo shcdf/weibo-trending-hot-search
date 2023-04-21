@@ -4,7 +4,7 @@ import os
 import json
 
 # tWord = input('Enter a word:')
-tWord = '疫苗'
+tWord = '通报'
 
 def wordCount(tWord):
     tNo = 0
@@ -18,7 +18,7 @@ def wordCount(tWord):
 
 
 print(tWord, wordCount(tWord))
-input('press any key to continue>>>')
+# input('press any key to continue>>>')
 
 
 topFolder = 'C:/0000temp/git/weibo-trending-hot-search/raw'
@@ -60,8 +60,8 @@ for root,dirs,files in os.walk(topFolder):
 i = 0 
 x = []
 y = []
-while i < 100:
-# while i < len(sourceli):
+# while i < 10000:
+while i < len(sourceli):
     x.append(sourceli[i][0])
     y.append(sourceli[i][1])
     i += 1
@@ -69,8 +69,8 @@ while i < 100:
 # print(x)
 # print(y)
 
-for i in range(len(x)):
-    print(x[i],y[i])
+# for i in range(len(x)):
+#     print(x[i],y[i])
 
 
 # ax.scatter(x,y)
@@ -88,14 +88,21 @@ from pyecharts.charts import Calendar
 
 # begin = datetime.date(2021, 1, 1)
 # end = datetime.date(2021, 2, 19)
-data = [x,y]
+# data = [x,y]
+
+data = [
+    [str(x[i]), y[i]]
+    for i in range(len(x))
+]
+
+# for it in data: print(it)
 
 
 (
     Calendar()
     .add(
-        series_name="444",
-        yaxis_data = y,
+        series_name=str(tWord),
+        yaxis_data = data,
         calendar_opts=opts.CalendarOpts(
             pos_top="120",
             pos_left="30",
@@ -107,7 +114,7 @@ data = [x,y]
     .set_global_opts(
         title_opts=opts.TitleOpts(pos_top="30", pos_left="center", title="2021"),
         visualmap_opts=opts.VisualMapOpts(
-            max_=200, min_=1, orient="horizontal", is_piecewise=False
+            max_=1, min_=100, orient="horizontal", is_piecewise=False
         ),
     )
     .render("calendar.html")
