@@ -1,6 +1,6 @@
 import os
 
-kword = "紧急情况"
+kword = "俄乌"
 searchfolder = 'C:/0000temp/git/weibo-trending-hot-search/archivestxt'
 resultfile = ('C:/0000temp/git/weibo-trending-hot-search/result/' + kword + '.txt')
 if os.path.isfile(resultfile): input('The file is existing>>>')
