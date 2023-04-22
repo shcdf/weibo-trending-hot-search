@@ -1,6 +1,6 @@
 import os
 
-kword = "郑州"
+kword = "紧急情况"
 searchfolder = 'C:/0000temp/git/weibo-trending-hot-search/archivestxt'
 resultfile = ('C:/0000temp/git/weibo-trending-hot-search/result/' + kword + '.txt')
 if os.path.isfile(resultfile): input('The file is existing>>>')
@@ -25,3 +25,4 @@ for root,dirs,files in os.walk(searchfolder):
 f_count = open(resultfile,'r', encoding='utf-8') 
 count = len(f_count.readlines())
 print(str(count) + ' records are hit')
+
